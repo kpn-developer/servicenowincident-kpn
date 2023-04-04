@@ -1,0 +1,558 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: 'ServiceNow Incident'
+  description: >-
+    With the ServiceNow API, KPN customers can do the following:  
+   
+     - Create new incidents.
+     - Update existing incidents. 
+     - Retrieve incident data.
+
+    ### Key highlights
+
+    - **Security:**  HTTPS, OAuth, Rate limit
+
+    - **Versioning:**  Supports version-less API, version tight. If no version
+    is provided (in header) it defaults to latest version. 
+
+
+    ---
+
+    ## [KPN API Store](https://developer.kpn.com/)<br/>
+    [Getting Started](https://developer.kpn.com/getting-started)
+    
+    ---
+  contact:
+    name: API Support
+    email: api_developer@kpn.com
+    url: 'https://developer.kpn.com/support'
+  termsOfService: 'https://developer.kpn.com/legal'
+servers:
+  - url: 'https://api-prd.kpn.com/network/kpn/servicenow'
+externalDocs:
+  description: HTTP response headers
+  url: https://developer.kpn.com/documentation-response-headers
+paths:
+  /NewIncident:
+    post:
+      tags:
+      - Incident
+      summary: Creates new incident.
+      description: Create a new incident.
+      operationId: PostNewincident
+      security:
+      - oauth2: []
+      parameters:
+        - $ref: "#/components/parameters/api_version"
+      requestBody:
+        description: Incident new object to create new incident.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewRequest'
+        required: false
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewIncidentPost200ApplicationJsonResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        500:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      deprecated: false
+  /UpdateIncident:
+    patch:
+      tags:
+      - Incident
+      summary:  Updates exisiting incident.
+      description: Update an excisting incident.
+      operationId: PatchUpdateincident
+      security:
+      - oauth2: []
+      parameters:
+        - $ref: "#/components/parameters/api_version"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRequest'
+        required: false
+      responses:
+        200:
+          description: Successful operation
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentPost200ApplicationJsonResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        500:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      deprecated: false
+  /GetActiveIncidents:
+    get:
+      tags:
+      - Incident
+      summary: Retrieves all active incidents.
+      description: Retrieve all active incidents.
+      operationId: GetAllincident
+      security:
+      - oauth2: []
+      parameters:
+        - $ref: "#/components/parameters/api_version"
+      responses:
+        200:
+          description: Successful operation
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentGetActive200ApplicationJsonResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        500:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      deprecated: false
+  /GetIncident/{ticket number}:
+    get:
+      tags:
+      - Incident
+      summary: Retrieves single incident. 
+      description: Retrieve information for a single incident. Send the ticket number in the path of the request. 
+      operationId: GetIndividualincident
+      security:
+      - oauth2: []
+      parameters:
+        - $ref: "#/components/parameters/api_version"
+        - $ref: "#/components/parameters/ticket_number_path"
+      responses:
+        200:
+          description: Successful operation
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentGet200ApplicationJsonResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+        500:
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+          scopes : {}
+  parameters:
+    api_version:
+      in: header
+      name: api-version
+      schema:
+        type: string
+        default: ""
+      description: >-
+          API Version. If no version is provided it defaults to latest version.
+      required: false
+    api_version_query:
+      in: query
+      name: api-version
+      schema:
+        type: string
+        default: ""
+      description: >-
+          API Version. If no version is provided it defaults to latest version.
+      required: false
+    ticket_number_path:
+      in: path
+      name: ticket number
+      schema:
+        type: string
+        default: "{{GetIncident.ticket_number}}"
+      description: >-
+          Incident ticket number.
+      required: true
+  schemas:
+    error:
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Transaction id of the the request
+          title: Transaction ID
+        status:
+          type: string
+          description: Status
+          title: Status
+        name:
+          type: string
+          description: Error name
+          title: Error name
+        message:
+          type: string
+          description: Error message
+          title: Error message
+        info:
+          type: string
+          description: Additional information about error
+          title: Info
+    NewRequest:
+      title: NewRequest
+      required:
+      - reference_number
+      - short_description
+      - description
+      type: object
+      properties:
+        reference_number:
+          type: string
+          description: Unique Reference number in the Source system.
+          example: ABC1234
+          default: "{{NewIncident.reference_number}}"
+        short_description:
+          type: string
+          description: Short description/summary about the issue.
+          example: Test short description.
+          default: "{{NewIncident.short_description}}"
+        description:
+          type: string
+          description: Long Description about the issue.
+          example: Test description.
+          default: "{{NewIncident.description}}"
+        ci:
+          type: string
+          description: CI to which this ticket belongs to.
+          example: ESB BIZTALK KPN
+          default: "{{NewIncident.ci}}"
+        service:
+          type: string
+          description: Service applicable for ticket.
+          default: "{{NewIncident.service}}"
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+          description: ''
+          
+    NewIncidentPost200ApplicationJsonResponse:
+      title: NewIncidentPost200ApplicationJsonResponse
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/Result'
+    UpdateRequest:
+      title: UpdateRequest
+      required:
+      - action
+      - comment
+      - ticket_number
+      - reference_number
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/Action'
+        comment:
+          type: string
+          example: New comment update
+          default: "{{UpdateIncident.comment}}"
+        ticket_number:
+          type: string
+          description: Ticket number in the Destination system.
+          example: INC1234
+          default: "{{UpdateIncident.ticket_number}}"
+        reference_number:
+          type: string
+          description: Reference number in the Source system.
+          example: ABC1234
+          default: "{{UpdateIncident.reference_number}}"
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+          description: ''
+    IncidentPost200ApplicationJsonResponse:
+      title: IncidentPost200ApplicationJsonResponse
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/Result'
+    IncidentGet200ApplicationJsonResponse:
+      title: IncidentGet200ApplicationJsonResponse
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/Result2'
+    IncidentGetActive200ApplicationJsonResponse:
+      title: IncidentGetActive200ApplicationJsonResponse
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/Result3'
+          description: ''
+    Action:
+      title: Action
+      enum:
+      - Comment
+      - Reopen
+      type: string
+    Attachment:
+      title: Attachment
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the file with file extension.
+          example: test.txt
+          default: ""
+        content:
+          type: string
+          description: Base64 coded content of the attachment.
+          example: IQ0KZW5hYmxlIHNlY3JldCBjaXNjbw0KIQ0KIQ0KIQ0KIQ0KIQ0KIQ0KIQ0Kbm8gaXAgc291cmNlLXJvdXRlDQohDQohDQohDQohDQohDQohDQohDQohDQoNCg0KIQ0KaXAgd1ZXVlIDEwMCBvdCiBwZXJtaXQgdWQogdHJhbnNwb3J0IGlucHV0IHRlbG5ldA0KIQ0KZW5k
+          default: ""
+    Result:
+      title: Result
+      type: object
+      properties:
+        state:
+          type: string
+          example: inserted
+        ticket_number:
+          type: string
+          example: INC1234
+        reference_number:
+          type: string
+          example: ABC1234
+        sys_id:
+          type: string
+          example: e61ba982db43db807f1f14794b961943
+        note:
+          type: string
+          example: INC1234 Incident is created successfully.
+    Result2:
+      title: Result2
+      type: object
+      properties:
+        ticket_number:
+          type: string
+          example: INC1234
+        reference_number:
+          type: string
+          example: ABC1234
+        short_description:
+          type: string
+          example: short note
+        state:
+          type: string
+          example: Finished
+        company:
+          type: string
+          example: KPN B.V.
+        description:
+          type: string
+          example: textual description
+        contact:
+          type: string
+          example: B. Person
+        user:
+          type: string
+          example: A. Person
+        category:
+          type: string
+          example: Incident
+        priority:
+          type: string
+          example: Incident Ticket Priority 1,2,3
+        impact:
+          type: string
+          example: Incident Ticket Impact 1,2,3
+        urgency:
+          type: string
+          example: Incident Ticket urgency 1,2,3
+        ci:
+          type: string
+          example: XYZ_001P
+        customer_service:
+          type: string
+          example: Diensten
+        service_component:
+          type: string
+          example: Service
+        sla_due:
+          type: string
+          example: 2019-10-30
+        pending_reason:
+          type: string
+          example: awaiting vendor
+        required_information:
+          type: string
+          example: Please provide documentation
+        reason_user_required:
+          type: string
+          example: test solution provided
+        close_code:
+          type: string
+          example: Finished
+        solution:
+          type: string
+          example: Software Installed
+    Result3:
+      title: Result3
+      required:
+      - reference_number
+      - short_description
+      - state
+      - ticket_number
+      type: object
+      properties:
+        reference_number:
+          type: string
+          example: INC1234
+        short_description:
+          type: string
+          example: short note
+        state:
+          type: string
+          example: Finished
+        ticket_number:
+          type: string
+          example: INC1234
+tags:
+- name: Incident
+  description: Create/Update/Retrieve incidents in ServiceNow

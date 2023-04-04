@@ -1,0 +1,1717 @@
+{
+	"info": {
+		"_postman_id": "405383da-8527-4ced-9f81-665e5dd08ff0",
+		"name": "ServiceNowIncident-KPN",
+		"description": "With the ServiceNow API, KPN customers can do the following:  \n\n - Create new incidents.\n - Update existing incidents. \n - Retrieve incident data.\n\n### Key highlights\n- **Security:**  HTTPS, OAuth, Rate limit\n- **Versioning:**  Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version. \n\n---\n## [KPN API Store](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4406147-405383da-8527-4ced-9f81-665e5dd08ff0"
+	},
+	"item": [
+		{
+			"name": "UpdateIncident",
+			"item": [
+				{
+					"name": "Updates exisiting incident.",
+					"id": "1b1ae96a-8f53-4399-aac2-6f99d6b4e8d0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"description": "API Version. If no version is provided it defaults to latest version.",
+								"key": "api-version",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/UpdateIncident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"UpdateIncident"
+							]
+						},
+						"description": "Update an excisting incident."
+					},
+					"response": [
+						{
+							"id": "830d2412-f9d8-41cd-a897-42ffabf665d4",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"state\": \"<string>\",\n    \"ticket_number\": \"<string>\",\n    \"reference_number\": \"<string>\",\n    \"sys_id\": \"<string>\",\n    \"note\": \"<string>\"\n  }\n}"
+						},
+						{
+							"id": "24a28f4d-51f7-4107-95c5-9bc76db2fd55",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "aa75a06f-b210-4e7e-808b-a8297e814068",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "c2600945-2dc9-46ef-90aa-d4b0372f9852",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "9f9daf94-6893-45cf-9719-31d2780e54eb",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "65b1d959-5654-4995-8acc-7d21092f588e",
+							"name": "Too many requests",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "764c4c47-c01f-499c-b88d-e5e674a2d220",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"Comment\",\n  \"comment\": \"{{UpdateIncident.comment}}\",\n  \"ticket_number\": \"{{UpdateIncident.ticket_number}}\",\n  \"reference_number\": \"{{UpdateIncident.reference_number}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/UpdateIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"UpdateIncident"
+									]
+								},
+								"description": "Update an excisting incident."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "9ed4d209-db09-4110-8af9-471624f92d87"
+		},
+		{
+			"name": "NewIncident",
+			"item": [
+				{
+					"name": "Creates new incident.",
+					"id": "3cb4171f-3523-45bf-81c2-a4d077e8ade7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "API Version. If no version is provided it defaults to latest version.",
+								"key": "api-version",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/NewIncident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"NewIncident"
+							]
+						},
+						"description": "Create a new incident."
+					},
+					"response": [
+						{
+							"id": "c5fb39e4-a9c2-40fb-b75a-c4abaf91d6ad",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"state\": \"<string>\",\n    \"ticket_number\": \"<string>\",\n    \"reference_number\": \"<string>\",\n    \"sys_id\": \"<string>\",\n    \"note\": \"<string>\"\n  }\n}"
+						},
+						{
+							"id": "a87efeae-33a0-4e8e-af82-599f0c1c89e0",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "2af47cf2-f371-43e0-98c1-dbd31fc82083",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "f5f6a248-b431-43d6-9f6f-e105667bc27b",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "4bf3a773-5959-4c08-8ea5-043fbd3ca3f3",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "190fdab4-18a1-4438-888b-42f133307d47",
+							"name": "Too many requests",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "3034c7c2-b329-4bea-be4e-bb448d975924",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reference_number\": \"{{NewIncident.reference_number}}\",\n  \"short_description\": \"{{NewIncident.short_description}}\",\n  \"description\": \"{{NewIncident.description}}\",\n  \"ci\": \"{{NewIncident.ci}}\",\n  \"service\": \"{{NewIncident.service}}\",\n  \"attachments\": [\n    {\n      \"name\": \"\",\n      \"content\": \"\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/NewIncident",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"NewIncident"
+									]
+								},
+								"description": "Create a new incident."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "fe8a0c75-a1b9-432f-a6c3-75bb66566881"
+		},
+		{
+			"name": "GetIncident",
+			"item": [
+				{
+					"name": "{ticket number}",
+					"item": [
+						{
+							"name": "Retrieves single incident.",
+							"id": "e2a082b7-c74d-4c3d-b7b5-29e1ff25a401",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetIncident/:ticket number",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetIncident",
+										":ticket number"
+									],
+									"variable": [
+										{
+											"key": "ticket number",
+											"value": "{{GetIncident.ticket_number}}"
+										}
+									]
+								},
+								"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+							},
+							"response": [
+								{
+									"id": "60ce7492-c6b0-4911-9ff8-82f3870baab3",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"ticket_number\": \"<string>\",\n    \"reference_number\": \"<string>\",\n    \"short_description\": \"<string>\",\n    \"state\": \"<string>\",\n    \"company\": \"<string>\",\n    \"description\": \"<string>\",\n    \"contact\": \"<string>\",\n    \"user\": \"<string>\",\n    \"category\": \"<string>\",\n    \"priority\": \"<string>\",\n    \"impact\": \"<string>\",\n    \"urgency\": \"<string>\",\n    \"ci\": \"<string>\",\n    \"customer_service\": \"<string>\",\n    \"service_component\": \"<string>\",\n    \"sla_due\": \"<string>\",\n    \"pending_reason\": \"<string>\",\n    \"required_information\": \"<string>\",\n    \"reason_user_required\": \"<string>\",\n    \"close_code\": \"<string>\",\n    \"solution\": \"<string>\"\n  }\n}"
+								},
+								{
+									"id": "9eb8f161-bbb7-49c1-9204-415ed30525f5",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "8c69ee94-c23e-43f2-b8cf-42a40b79a89f",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "7b622531-77f0-4e1a-969d-0ca0b948d8c9",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "71082907-2787-4d34-a588-679a9fe46d9c",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "c4dc052d-814e-476d-a510-faec9384d179",
+									"name": "Too many requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "f2d0fe29-747b-4b32-90a5-e7bf700427f5",
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "API Version. If no version is provided it defaults to latest version.",
+												"key": "api-version",
+												"value": "",
+												"disabled": true
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/GetIncident/:ticket number",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"GetIncident",
+												":ticket number"
+											],
+											"variable": [
+												{
+													"key": "ticket number",
+													"value": "{{GetIncident.ticket_number}}"
+												}
+											]
+										},
+										"description": "Retrieve information for a single incident. Send the ticket number in the path of the request."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "f0ef36e0-c259-4b49-9f13-832f24cf2a38"
+				}
+			],
+			"id": "38b7a040-1669-4879-8795-4d3fb3974dbb"
+		},
+		{
+			"name": "GetActiveIncidents",
+			"item": [
+				{
+					"name": "Retrieves all active incidents.",
+					"id": "49675393-dec3-4c63-824c-e8b30f32cd4a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "API Version. If no version is provided it defaults to latest version.",
+								"key": "api-version",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/GetActiveIncidents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"GetActiveIncidents"
+							]
+						},
+						"description": "Retrieve all active incidents."
+					},
+					"response": [
+						{
+							"id": "af6d0677-e321-4c8b-a3a7-15b65a6d2f53",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": [\n    {\n      \"reference_number\": \"<string>\",\n      \"short_description\": \"<string>\",\n      \"state\": \"<string>\",\n      \"ticket_number\": \"<string>\"\n    },\n    {\n      \"reference_number\": \"<string>\",\n      \"short_description\": \"<string>\",\n      \"state\": \"<string>\",\n      \"ticket_number\": \"<string>\"\n    }\n  ]\n}"
+						},
+						{
+							"id": "c51febf5-cb39-416e-93aa-e5b1d250a1e8",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "483422bf-4b36-47b1-95e4-25a570a25457",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "827a42e7-7567-4792-9f9a-ea3fb001ee48",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "f3a75912-a1a2-4634-9ccf-389105051b4e",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "70442c2d-43ee-4373-93d9-3f47c3c42f9d",
+							"name": "Too many requests",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "3fa0f364-ff8e-4beb-b5f6-290dc1d0e2bd",
+							"name": "Server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/GetActiveIncidents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetActiveIncidents"
+									]
+								},
+								"description": "Retrieve all active incidents."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "dc81e36d-567a-4687-9334-81e89341ad7b"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7974c47e-9cc5-4d9e-9c6f-776bb081dec5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "db6d9161-bc51-45a9-abee-56054063e457",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9a74cefb-0b80-4229-bb7a-4490e3cb86ee",
+			"key": "baseUrl",
+			"value": "https://api-prd.kpn.com/network/kpn/incident"
+		},
+		{
+			"id": "e90dfee1-9a58-4d6c-8e7c-7b079a63c690",
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "af267d4e-8811-4d0f-982d-94159690b3ba",
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "c605c62a-e792-4357-9a00-3015e49214b1",
+			"key": "NewIncident.reference_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6c48ba98-022a-4cc2-a2a6-56c40f5186f8",
+			"key": "NewIncident.short_description",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "fdcb83da-4e53-4d1f-a388-d7ddc67bc8dc",
+			"key": "NewIncident.description",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "998255ef-8fab-4e28-8f90-e43b008270ab",
+			"key": "NewIncident.ci",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "cfd5a353-6b31-4465-a764-a4c110a8c2b4",
+			"key": "NewIncident.service",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "26ef27d1-5e24-4c59-b2f6-54fe8c38e9b1",
+			"key": "UpdateIncident.comment",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "110dea14-501c-434b-a7f6-d9354854ac68",
+			"key": "UpdateIncident.ticket_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bb07c74d-4963-4247-be7a-d4d7f9b9e663",
+			"key": "UpdateIncident.reference_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "2b0b4cf4-5258-44ef-a859-dcc0bb6a1881",
+			"key": "GetIncident.ticket_number",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
