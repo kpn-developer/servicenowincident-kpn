@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "405383da-8527-4ced-9f81-665e5dd08ff0",
 		"name": "ServiceNowIncident-KPN",
-		"description": "With the ServiceNow API, KPN customers can do the following:  \n\n - Create new incidents.\n - Update existing incidents. \n - Retrieve incident data.\n\n### Key highlights\n- **Security:**  HTTPS, OAuth, Rate limit\n- **Versioning:**  Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version. \n\n---\n## [KPN API Store](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"description": "With the ServiceNow API, KPN customers can do the following:\n\n- Create new incidents.\n- Update existing incidents.\n- Retrieve incident data.\n    \n\n### Key highlights\n\n- **Security:** HTTPS, OAuth, Rate limit\n- **Versioning:** Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version.\n    \n\n---\n\n## [KPN Developer](https://developer.kpn.com/)  \n[Getting Started](https://developer.kpn.com/getting-started)\n\n---\n\nContact Support:  \nName: API Support  \nEmail: [api_developer@kpn.com](mailto:api_developer@kpn.com)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "4406147-405383da-8527-4ced-9f81-665e5dd08ff0"
 	},
