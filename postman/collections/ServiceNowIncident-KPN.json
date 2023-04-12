@@ -1578,6 +1578,11 @@
 		"type": "oauth2",
 		"oauth2": [
 			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
 				"key": "clientSecret",
 				"value": "{{client_secret}}",
 				"type": "string"
@@ -1611,11 +1616,6 @@
 				"key": "addTokenTo",
 				"value": "header",
 				"type": "string"
-			},
-			{
-				"key": "client_authentication",
-				"value": "header",
-				"type": "string"
 			}
 		]
 	},
@@ -1623,7 +1623,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7974c47e-9cc5-4d9e-9c6f-776bb081dec5",
+				"id": "baef4577-9869-4e3d-890b-3e253aa418a7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1633,7 +1633,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "db6d9161-bc51-45a9-abee-56054063e457",
+				"id": "477a5a19-3372-44cb-8814-bcef9608c15f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1643,72 +1643,72 @@
 	],
 	"variable": [
 		{
-			"id": "9a74cefb-0b80-4229-bb7a-4490e3cb86ee",
+			"id": "61da3ad7-1f63-43f0-9345-9061e6c9114a",
 			"key": "baseUrl",
 			"value": "https://api-prd.kpn.com/network/kpn/incident"
 		},
 		{
-			"id": "e90dfee1-9a58-4d6c-8e7c-7b079a63c690",
+			"id": "2fddc733-38cd-45c4-9302-b3ff85351cea",
 			"key": "client_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "af267d4e-8811-4d0f-982d-94159690b3ba",
+			"id": "366ec99c-b1e0-4fb6-bb91-666603473d6e",
 			"key": "client_secret",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "c605c62a-e792-4357-9a00-3015e49214b1",
+			"id": "0ca1646a-dc9c-4e28-95a3-d12e59811710",
 			"key": "NewIncident.reference_number",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "6c48ba98-022a-4cc2-a2a6-56c40f5186f8",
+			"id": "30bd8f5a-5909-429b-a74c-24ccadbb2110",
 			"key": "NewIncident.short_description",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "fdcb83da-4e53-4d1f-a388-d7ddc67bc8dc",
+			"id": "8f0610c1-faad-452b-af99-c02d8ccfc470",
 			"key": "NewIncident.description",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "998255ef-8fab-4e28-8f90-e43b008270ab",
+			"id": "41fe0a53-fbd0-4a93-9d16-537f4faf5838",
 			"key": "NewIncident.ci",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "cfd5a353-6b31-4465-a764-a4c110a8c2b4",
+			"id": "aa27dccc-8afa-4fb8-9ae1-900dcc5abd83",
 			"key": "NewIncident.service",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "26ef27d1-5e24-4c59-b2f6-54fe8c38e9b1",
+			"id": "371fd1f9-cdb7-44fc-b050-010c20bec1c8",
 			"key": "UpdateIncident.comment",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "110dea14-501c-434b-a7f6-d9354854ac68",
+			"id": "8dd91d75-65a3-420a-b872-0024db3f8156",
 			"key": "UpdateIncident.ticket_number",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "bb07c74d-4963-4247-be7a-d4d7f9b9e663",
+			"id": "99424afd-3872-45c9-ab99-7cae5fc0f50e",
 			"key": "UpdateIncident.reference_number",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "2b0b4cf4-5258-44ef-a859-dcc0bb6a1881",
+			"id": "b0583766-02a1-4944-a2cc-87f9462c396b",
 			"key": "GetIncident.ticket_number",
 			"value": "",
 			"type": "string"
